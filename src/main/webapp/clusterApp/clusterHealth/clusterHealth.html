@@ -1,0 +1,20 @@
+<md-card>
+    <md-card-header md-colors="{backgroundColor: '{{clusterHealthData.status}}'}">
+      <md-card-avatar>
+          <img class="md-user-avatar" src="/images/cluster2.png">
+      </md-card-avatar>
+      <md-card-header-text>
+          <span class="md-title">Name :  {{clusterHealthData.cluster_name}}</span>
+          <span class="md-subhead">Status :  {{clusterHealthData.status | uppercase}}</span>
+      </md-card-header-text>
+    </md-card-header>
+    <md-card-content>
+      <table class="table table-hover">
+          <tbody>
+              <tr ng-repeat="(key, value) in clusterHealthData">
+                <td ng-style="bgColor={'background-color':'{{ value }}'}"> {{key}} </td> <td ng-style="bgColor={'background-color':'{{ value }}'}"> {{ value }} </td>
+              </tr>
+          </tbody>
+      </table>
+    </md-card-content>
+</md-card>

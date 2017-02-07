@@ -1,0 +1,21 @@
+<div>
+    <nav class="navbar" >
+      <div class="container-fluid">
+        <div class="navbar-header" style="margin: 10px 950px 0px 15px;">
+          <a href='#'><img src="/images/bank-logo_cropped.png"  alt="Cinque Terre" width="260" height="35"></a>
+        </div>
+        <div>
+            <!--<label>Country</label>-->
+        </div>
+        <div class="input-group" style="margin: 0px 0px 0px 25px;">
+             <md-input-container>
+              <md-select  ng-change="countryChanged()" ng-model="hostUrl">
+                <md-option ng-repeat="bhost in hosts" value="{{bhost.value}}" >
+                  {{bhost.text}}
+                </md-option>
+              </md-select>
+            </md-input-container>
+      </div>
+      </div>
+    </nav>
+</div>

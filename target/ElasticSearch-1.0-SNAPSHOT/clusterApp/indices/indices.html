@@ -1,0 +1,23 @@
+<md-card>
+    <div ng-if="indexData.length>0">           
+      <table class="table">
+            <thead>
+              <tr>
+                <th>Index</th>
+                <th>Status</th>
+                <th>State</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="index in indexData | orderBy:'Index'" md-colors="{backgroundColor: '{{index.Status}}'}">
+                <td class="col-sm-2">{{index.Index}}</td>
+                <td class="col-sm-1"><b>{{index.Status}}</b></td>
+                <td class="col-sm-1">{{index.State}}</td>
+              </tr>
+            </tbody>
+      </table>
+    </div>
+   <div class="container" ng-if="indexData.length<=0" style="margin: 20px 0px 20px 420px;">
+	<button class="btn btn-lg "><span class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span> Loading...</button>
+    </div>
+</md-card>

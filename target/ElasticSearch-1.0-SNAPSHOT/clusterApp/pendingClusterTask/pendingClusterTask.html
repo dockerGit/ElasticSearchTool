@@ -1,0 +1,33 @@
+
+<md-card>
+    <md-card-header>
+              <md-card-avatar>
+                  <img class="md-user-avatar" src="/images/task.png">
+              </md-card-avatar>
+              <md-card-header-text>
+                  <md-subheader class="md-no-sticky" style="background-color: Bisque;">Total Pending Tasks :  {{pendingClusterTaskData.tasks.length}}</md-subheader>
+              </md-card-header-text>
+    </md-card-header>
+    <md-card-content>
+        <div class="panel-group">
+            <div class="col-sm-5 panel" style="margin: 0px 10px 5px 50px;" ng-repeat="task in pendingClusterTaskData.tasks">
+              <div class="panel-heading" ng-click='show = !show' style="background-color: Wheat;">
+                <p>
+                    {{task.insert_order}} ({{task.priority}})
+                </p>
+              </div>
+              <div class="panel-body" ng-show=show>
+                  <table class="table table-hover">
+                      <tbody>
+                          <tr ng-repeat="(key, value) in task">
+                            <th> {{key}} </th> 
+                            <td> {{value}} </td>
+                          </tr>
+                      </tbody>
+                  </table>
+              </div>
+                
+            </div>
+        </div>
+    </md-card-content>
+</md-card>

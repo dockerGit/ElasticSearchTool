@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BankBazaar ELK</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+      
+    <!--Including Bootstrap liberaries-->
+    <script src="/jquery/jquery-3.1.1.min.js"></script>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+      
+    <!--Including AngularJS liberaries-->
+    <script src="/angular/js/angular.min.js"></script>
+    <script src="/angular/js/angular-route.min.js"></script>
+    <script src="/angular/js/angular-animate.min.js"></script>
+    <script src="/angular/js/angular-aria.min.js"></script>
+    <script src="/angular/js/angular-material.min.js"></script>
+    <script src="/angular/js/angular-ui-router.min.js"></script>
+    <script src="/angular/js/angular-messages.min.js"></script> 
+    <link rel="stylesheet" href="/angular/css/angular-material.min.css">
+    <link rel="stylesheet" href="/angular/css/datetimepicker.css">
+    <link rel="stylesheet" href="/angular/css/angular-moment-picker.css">
+    <script type="text/javascript" src="/angular/js/moment.js"></script>
+    <script type="text/javascript" src="/angular/js/datetimepicker.js"></script>
+    <script type="text/javascript" src="/angular/js/datetimepicker.templates.js"></script>
+    <script type="text/javascript" src="/angular/js/angular-moment-picker.js"></script>
+      
+      <!--Including App JS-->
+    <script src="/elkApp/elkController.js"></script>
+    <script src="/elkApp/elkReport/elkReportCtrl.js"></script>
+      
+  </head>
+  <body>
+      <div ng-app='elkApp'>
+          <div ng-controller="elkController">
+             <logo-header></logo-header>
+             <div><nav-bar></nav-bar></div>
+          </div>
+      </div>
+  </body>
+</html>

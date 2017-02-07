@@ -1,0 +1,74 @@
+<md-card>
+  <form name="form">
+    <div style="margin: 20px 200px 40px 150px;">
+        <div class="form-group">
+            <!--<label for="country">Country:</label>-->
+            <md-radio-group ng-model="userInputData.url" id="country">
+              <md-radio-button class="radio-inline" value="http://10.1.20.41:9200">India</md-radio-button>
+              <md-radio-button class="radio-inline" value="http://10.10.7.13:9200"> Singapore </md-radio-button>
+            </md-radio-group>
+        </div>
+         <!-- <div class="form-group">
+            <label for="method">Method:</label>
+            <input ng-model="userInputData.method" class="form-control" id="method" ng-disabled="true">
+          </div>-->
+          <div class="form-group">
+                <label for="index">Index: <span class="after" md-colors="{color: 'red'}">*</span></label>
+                  <select  ng-model="userInputData.index" id="index" ng-required="required" class="form-control">
+                    <option ng-repeat="index in indexes" value="{{index}}" >
+                      {{index}}
+                    </option>
+                  </select>
+          </div>
+          <div class="form-group">
+                <label for="type">Type: <span class="after" md-colors="{color: 'red'}">*</span></label>
+                  <select  ng-model="userInputData.type" id="type" ng-required="required" class="form-control">
+                    <option ng-repeat="type in types" value="{{type}}" >
+                      {{type}}
+                    </option>
+                  </select>
+          </div>
+          <!--<div class="form-group">
+                <label for="hostname">Hostname:</label>
+                  <select  ng-model="userInputData.hostname" id="hostname" class="form-control">
+                    <option ng-repeat="host in hosts" value="{{host}}" >
+                      {{host}}
+                    </option>
+                  </select>
+          </div>-->
+          <div class="form-group">
+            <label for="message">Message: <span class="after" md-colors="{color: 'red'}">*</span></label>
+            <input ng-model="userInputData.message" class="form-control" id="message" ng-required="required">
+          </div>
+         <div class="form-group">
+             <label for="dateRangeGTE">Date Range GTE: <span class="after" md-colors="{color: 'red'}">*</span></label>
+            <input class="form-control" id="dateRangeGTE"
+               ng-model="userInputData.dateRangeGTE"
+               ng-model-options="{ updateOn: 'blur' }"
+               placeholder="Select a date..."
+               moment-picker="userInputData.dateRangeGTE" max-date="userInputData.dateRangeLTE == ''?maxDate:userInputData.dateRangeLTE" ng-required="required">
+          </div>
+          <div class="form-group">
+            <label for="dateRangeLTE">Date Range LTE: <span class="after" md-colors="{color: 'red'}">*</span></label>
+            <input class="form-control" id="dateRangeLTE"
+               ng-model="userInputData.dateRangeLTE"
+               ng-model-options="{ updateOn: 'blur' }"
+               placeholder="Select a date..."
+               moment-picker="userInputData.dateRangeLTE" min-date="userInputData.dateRangeGTE" max-date="maxDate" ng-required="required">
+          </div>
+          <div class="form-group">
+            <label for="filename">Filename: <span class="after" md-colors="{color: 'red'}">*</span></label>
+            <input ng-model="userInputData.filename" class="form-control" id="filename" ng-required="required">
+          </div>
+        <!--<p style="margin: 20px 0px 10px 50px;" ng-if="form.$error.required" md-colors="{color: 'red'}"><b>All mandatory fields needs to be filled to generate report<span class="after" md-colors="{color: 'red'}">*</span></b></p>-->
+        <div class="row" style="margin-top: 50px;">
+              <div class="col-sm-1" class="tooltip-wrapper" title="Click to Refresh the page">
+                <button type="submit" class="btn btn-primary" ng-click="refreshPage();">Reset</button>
+              </div>
+              <div class="col-sm-1" style="margin-left: 310px;" class="tooltip-wrapper" title="Fill all Mendatory fields to enable this button">
+                  <button type="submit" class="btn btn-primary" ng-disabled="form.$error.required"  ng-click="submitToServer()">Generate Report</button>
+              </div>
+        </div>
+   </div>
+ </form>
+</md-card>

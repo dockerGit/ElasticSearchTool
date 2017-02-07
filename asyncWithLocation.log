@@ -1,0 +1,13 @@
+2016-12-09 18:14:15,195 INFO o.e.p.PluginsService [main] org.elasticsearch.plugins.PluginsService.logPluginInfo(PluginsService.java:220) no modules loaded 
+2016-12-09 18:14:15,201 INFO o.e.p.PluginsService [main] org.elasticsearch.plugins.PluginsService.logPluginInfo(PluginsService.java:223) loaded plugin [org.elasticsearch.index.reindex.ReindexPlugin] 
+2016-12-09 18:14:15,202 INFO o.e.p.PluginsService [main] org.elasticsearch.plugins.PluginsService.logPluginInfo(PluginsService.java:223) loaded plugin [org.elasticsearch.percolator.PercolatorPlugin] 
+2016-12-09 18:14:15,202 INFO o.e.p.PluginsService [main] org.elasticsearch.plugins.PluginsService.logPluginInfo(PluginsService.java:223) loaded plugin [org.elasticsearch.script.mustache.MustachePlugin] 
+2016-12-09 18:14:15,202 INFO o.e.p.PluginsService [main] org.elasticsearch.plugins.PluginsService.logPluginInfo(PluginsService.java:223) loaded plugin [org.elasticsearch.transport.Netty3Plugin] 
+2016-12-09 18:14:15,203 INFO o.e.p.PluginsService [main] org.elasticsearch.plugins.PluginsService.logPluginInfo(PluginsService.java:223) loaded plugin [org.elasticsearch.transport.Netty4Plugin] 
+2016-12-09 18:14:21,683 INFO o.e.c.t.TransportClientNodesService$SimpleNodeSampler [main] org.elasticsearch.client.transport.TransportClientNodesService$SimpleNodeSampler.doSample(TransportClientNodesService.java:414) failed to get node info for {#transport#-1}{FuCJHAFhTsGgjfGtrfuRAQ}{10.1.20.37}{10.1.20.37:9200}, disconnecting... ReceiveTimeoutTransportException[[][10.1.20.37:9200][cluster:monitor/nodes/liveness] request_id [0] timed out after [5003ms]]
+	at org.elasticsearch.transport.TransportService$TimeoutHandler.run(TransportService.java:840)
+	at org.elasticsearch.common.util.concurrent.ThreadContext$ContextPreservingRunnable.run(ThreadContext.java:451)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+

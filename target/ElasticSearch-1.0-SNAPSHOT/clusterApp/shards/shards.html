@@ -1,0 +1,139 @@
+<md-card>
+    <md-card-header>
+              <md-card-avatar>
+                  <img class="md-user-avatar" src="/images/shards.png">
+              </md-card-avatar>
+              <md-card-header-text>
+                  <md-subheader class="md-no-sticky" ><b>Total : {{shardsDataLen}}</b></md-subheader>
+              </md-card-header-text>
+    </md-card-header>
+ <!--   <md-card-content>
+        <div class="panel-group">
+            <div class="row" ng-repeat="(key, value) in newShardsData">
+                <div class="col-sm-9 panel" style="margin: 0px 10px 5px 50px;" >
+                  <div class="panel-heading" ng-click='show = !show' style="background-color: Silver;">
+                    <p>
+                        {{key}}
+                    </p>
+                  </div>
+                  <div class="panel-body" ng-show=show>
+                        <div class="panel-group">
+                            <div class="row" ng-repeat="(key2, value2) in value" ng-if="key2 != 'STARTED' || key2 != 'UNASSIGNED'" >
+                                <div class="col-sm-9 panel" ng-init='show = false'>
+                                  <div class="panel-heading" ng-click='show = !show' style="background-color: Wheat;">
+                                    <p>
+                                        {{key2}}
+                                    </p>
+                                  </div>
+                                  <div class="panel-body" ng-show=show>
+                                      <div class="panel-group">
+                                            <div  ng-repeat="(key3, value3) in value2" ng-init='show = false'>
+                                              <div class="panel-heading" ng-click='show = !show' style="background-color: Wheat;">
+                                                <p>
+                                                    <b>{{key3}} nodes : </b>{{value3.length}}
+                                                </p>
+                                              </div>
+                                              <div class="panel-body" ng-show=show >
+                                                 <div class="panel-group">
+                                                    <div class="col-sm-9 panel" ng-repeat="nodeObj in value3" ng-init='show = false'>
+                                                      <div class="panel-heading" ng-click='show = !show' style="background-color: Wheat;">
+                                                        <p>
+                                                            {{nodeObj.index}}
+                                                        </p>
+                                                      </div>
+                                                      <div class="panel-body" ng-show=show >
+                                                            <table class="table table-hover">
+                                                                  <tbody>
+                                                                      <tr ng-repeat="(key4, value4) in nodeObj track by $index">
+                                                                        <th> {{key4}} </th> 
+                                                                        <td> {{value4}} </td>
+                                                                      </tr>
+                                                                  </tbody>
+                                                            </table>
+                                                      </div>
+                                                    </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                        </div>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </md-card-content>-->
+    
+   <md-card-content>
+       <!--<p ng-if='!newShardsData' style="margin: 0px 0px 0px 60px;">Loading ..... </p>-->
+       <div class="container" ng-if='!newShardsData' style="margin: 20px 0px 20px 420px;">
+	       <button class="btn btn-lg "><span class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span> Loading...</button>
+        </div>
+        <div class="panel-group">
+            <div class="row" ng-repeat="(key, value) in newShardsData" >
+                <div class="col-sm-9 panel" style="margin: 0px 10px 5px 50px;" >
+                  <div class="panel-heading" ng-click='show = !show' style="background-color: Silver;">
+                    <p>
+                        {{key}}
+                    </p>
+                  </div>
+                  <div class="panel-body" ng-show=show>
+                        <div class="panel-group">
+                            <div class="row" ng-repeat="(key2, value2) in value">
+                                <div class="col-sm-9 panel" ng-init='show = false'>
+                                  <div class="panel-heading" ng-click='show = !show' style="background-color: Wheat;">
+                                    <p>
+                                        {{key2}}
+                                    </p>
+                                  </div>
+                                  <div class="panel-body" ng-show=show>
+                                      <div class="panel-group">
+                                            <div  ng-repeat="nodeObj in value2" ng-init='show = false'>
+                                              <div class="panel-heading" ng-click='show = !show' style="background-color: Wheat;">
+                                                <p>
+                                                    <b>{{nodeObj.index}} : </b>{{nodeObj.state}}<b> | Shards : </b>{{nodeObj.shard}}
+                                                </p>
+                                              </div>
+                                              <div class="panel-body" ng-show=show >
+                                                 <table class="table table-hover">
+                                                     <tbody>
+                                                        <tr ng-repeat="(key3, value3) in nodeObj track by $index">
+                                                            <th> {{key3}} </th> 
+                                                            <td> {{value3}} </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                              </div>
+                                            </div>
+                                        </div>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </md-card-content>
+    
+    
+</md-card>
+
+ <!--<table class="table table-hover">
+                      <tbody>
+                          <tr ng-repeat="(key, value) in task">
+                            <th> {{key}} </th> 
+                            <td> {{value}} </td>
+                          </tr>
+                      </tbody>
+                  </table>-->
+<!-- <table class="table table-hover" ng-repeat="nodeObj in value3">
+                                              <tbody>
+                                                  <tr ng-repeat="(key4, value4) in nodeObj">
+                                                    <th> {{key4}} </th> 
+                                                    <td> {{value4}} </td>
+                                                  </tr>
+                                              </tbody>
+                                          </table>-->
